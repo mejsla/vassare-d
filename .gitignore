@@ -15,4 +15,5 @@ vassare-d-test-*
 *.lst
 *.iml
 .idea
+.run
 classes
