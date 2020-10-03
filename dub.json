@@ -6,9 +6,21 @@
     {
       "name": "executable",
       "targetType": "executable"
+    },
+    {
+      "excludedSourceFiles": [
+        "source/hello.d"
+      ],
+      "mainSourceFile": "source/foo.d",
+      "name": "unittest",
+      "targetType": "executable"
     }
   ],
   "copyright": "Copyright © 2020, Johan Dykström",
+  "dependencies": {
+    "d-unit": "~>0.9.3",
+    "dshould": "~>1.3.2"
+  },
   "description": "A minimal D application.",
   "license": "Boost Software License 1.0",
   "name": "vassare-d"
