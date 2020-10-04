@@ -16,20 +16,19 @@ out(s)
 }
 body
 {
-    auto da = to!dstring(a);
-    auto db = to!dstring(b);
+    string ra = a;
+    string rb = b;
+    string result;
 
-    dstring result;
-
-    while (!da.empty)
+    while (!ra.empty)
     {
-        result ~= da[0];
-        result ~= db[0];
-        da = da[1 .. $];
-        db = db[1 .. $];
+        result ~= ra.front;
+        result ~= rb.front;
+        ra.popFront();
+        rb.popFront();
     }
 
-    return to!string(result);
+    return result;
 }
 
 unittest
