@@ -8,13 +8,17 @@ void dynamicArrays()
 {
     int[] a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     a ~= 10;
+    a.reserve(100);
     writeln(a);
 
     writeln(a[7 .. $]);
 
-    const b = a.filter!(e => e % 2 == 0)
-               .map!(e => e + 100)
-               .array;
+    auto b = a.filter!(e => e % 2 == 0)
+              .map!(e => e + 100)
+              .array;
+    writeln(b);
+
+    b[] *= 2;
     writeln(b);
 
     writeln((immutable(char)[]).stringof);
