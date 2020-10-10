@@ -1,0 +1,15 @@
+{
+  "authors": [
+    "Johan Dykström"
+  ],
+  "configurations": [
+    {
+      "name": "executable",
+      "targetType": "executable"
+    }
+  ],
+  "copyright": "Copyright © 2020, Johan Dykström",
+  "description": "A minimal D application.",
+  "license": "Boost Software License 1.0",
+  "name": "vassare-d"
+}

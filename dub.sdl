@@ -1,7 +1,0 @@
-name "vassare-d"
-description "A minimal D application."
-authors "Johan Dykström"
-copyright "Copyright © 2020, Johan Dykström"
-license "Boost Software License 1.0"
-dependency "pegged" version="~>0.4.4"
-dflags "-J=." platform="dmd"
