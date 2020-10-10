@@ -1,52 +1,15 @@
-module app;
+import vibe.vibe;
 
-import std.algorithm;
-import std.array;
-import std.stdio;
+import controller;
+import korvkylen;
 
-void dynamicArrays()
+shared static this()
 {
-    int[] a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    a ~= 10;
-    a.reserve(100);
-    writeln(a);
+    auto router = new URLRouter;
+    router.registerRestInterface(new KorvController(new Korvkylen));
 
-    writeln(a[7 .. $]);
-
-    auto b = a.filter!(e => e % 2 == 0)
-              .map!(e => e + 100)
-              .array;
-    writeln(b);
-
-    b[] *= 2;
-    writeln(b);
-
-    writeln((immutable(char)[]).stringof);
-
-    string s = "Hello, world";
-    s ~= "!";
-    writeln(s);
-}
-
-void associativeArrays()
-{
-    int[string] aa = ["one" : 1, "two" : 2, "three" : 3];
-    aa["four"] = 4;
-    writeln(aa);
-
-    if (auto one = "one" in aa)
-    {
-        writeln("Found ", *one);
-    }
-
-    aa.byKey
-      .array
-      .sort
-      .each!(k => writeln(k, "=", aa[k]));
-}
-
-void main()
-{
-    dynamicArrays();
-    //associativeArrays();
+    auto settings = new HTTPServerSettings;
+    settings.port = 8081;
+    settings.bindAddresses = ["::1", "127.0.0.1"];
+    listenHTTP(settings, router);
 }

@@ -2,14 +2,23 @@
   "authors": [
     "Johan Dykström"
   ],
+  "copyright": "Copyright © 2020, Johan Dykström",
   "configurations": [
     {
       "name": "executable",
       "targetType": "executable"
+    },
+    {
+      "name": "unittest",
+      "targetType": "executable",
+      "mainSourceFile": "source/app.d"
     }
   ],
-  "copyright": "Copyright © 2020, Johan Dykström",
+  "dependencies": {
+    "vibe-d": "~>0.9.2"
+  },
   "description": "A minimal D application.",
   "license": "Boost Software License 1.0",
-  "name": "vassare-d"
+  "name": "vassare-d",
+  "versions": ["VibeDefaultMain", "VibeNoSSL"]
 }
