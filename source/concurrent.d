@@ -10,9 +10,12 @@ struct Exit
 {
 }
 
+// Not a global variable
+bool isDone = false;
+
 void worker(int id)
 {
-    bool isDone = false;
+    stdout.writeln("Starting worker ", id, ", address of isDone: ", &isDone);
 
     while (!isDone) {
         receive(
