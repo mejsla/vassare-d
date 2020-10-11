@@ -6,6 +6,11 @@
     {
       "name": "executable",
       "targetType": "executable"
+    },
+    {
+      "name": "unittest",
+      "targetType": "executable",
+      "mainSourceFile": "source/app.d"
     }
   ],
   "copyright": "Copyright © 2020, Johan Dykström",
